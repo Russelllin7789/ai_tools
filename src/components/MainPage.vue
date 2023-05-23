@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="top-section">
     <div class="flex flex-col items-center h-full w-full bg-black">
-      <div class="w-[80vw]">
+      <div class="max-w-[1920px] px-[312px]">
         <div
           class="flex w-full py-5 border-b border-solid border-white justify-between"
         >
@@ -249,7 +249,9 @@
         </div>
       </div>
       <div class="w-full bg-white rounded-[160px] pb-[160px]">
-        <div class="flex flex-col items-center justify-center px-[180px]">
+        <div
+          class="flex flex-col items-center justify-center max-w-[1920px] px-[312px]"
+        >
           <div
             class="font-black text-black text-[80px] leading-[96px] mt-[160px] mb-[80px]"
           >
@@ -337,14 +339,14 @@
           <div class="w-full mt-10">
             <ul class="flex items-center justify-between flex-wrap">
               <li
-                class="w-[416px] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+                class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
               >
                 <div class="flex flex-col h-[560px]">
                   <div class="h-[312px]">
                     <img
                       src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool1.png?raw=true"
                       alt="chatbot-builder"
-                      class="object-cover"
+                      class="object-cover h-full"
                     />
                   </div>
                   <div
@@ -381,13 +383,14 @@
                 </div>
               </li>
               <li
-                class="w-[416px] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+                class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
               >
                 <div class="flex flex-col h-[560px]">
                   <div class="h-[312px]">
                     <img
                       src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool2.png?raw=true"
                       alt="image-recognition-platform"
+                      class="object-cover h-full"
                     />
                   </div>
                   <div
@@ -424,13 +427,14 @@
                 </div>
               </li>
               <li
-                class="w-[416px] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+                class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
               >
                 <div class="flex flex-col h-[560px]">
                   <div class="h-[312px]">
                     <img
                       src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool3.png?raw=true"
                       alt="language-translation-API"
+                      class="object-cover h-full"
                     />
                   </div>
                   <div
@@ -467,13 +471,14 @@
                 </div>
               </li>
               <li
-                class="w-[416px] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+                class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
               >
                 <div class="flex flex-col h-[560px]">
                   <div class="h-[312px]">
                     <img
                       src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool4.png?raw=true"
                       alt="sentiment-analysis-API"
+                      class="object-cover h-full"
                     />
                   </div>
                   <div
@@ -510,13 +515,14 @@
                 </div>
               </li>
               <li
-                class="w-[416px] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+                class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
               >
                 <div class="flex flex-col h-[560px]">
                   <div class="h-[312px]">
                     <img
                       src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool5.png?raw=true"
                       alt="fraud-detection-platform"
+                      class="object-cover h-full"
                     />
                   </div>
                   <div
@@ -553,13 +559,14 @@
                 </div>
               </li>
               <li
-                class="w-[416px] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+                class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
               >
                 <div class="flex flex-col h-[560px]">
                   <div class="h-[312px]">
                     <img
                       src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool6.png?raw=true"
                       alt="voice-assistant-SDK"
+                      class="object-cover h-full"
                     />
                   </div>
                   <div
@@ -628,6 +635,85 @@
             <div class="w-[5px] h-[8px] hover:cursor-pointer">
               <img src="../assets/RightArrow.png" alt="more-page" />
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full max-w-[1920px] px-[312px] pt-[158px]">
+        <div
+          class="w-full flex flex-col items-center justify-center border-b border-solid border-white pb-[158px]"
+        >
+          <div class="font-black text-[48px] leading-[57.6px] text-white mb-10">
+            現在就來建立屬於你的服務吧
+          </div>
+          <button
+            class="flex items-center justify-center bg-black border border-solid border-white rounded-2xl py-5 px-10"
+          >
+            <div class="text-white font-black text-[20px] leading-[24px] mr-4">
+              開始使用
+            </div>
+            <div class="w-[15px] h-[15px]">
+              <img src="../assets/RightUp.png" alt="start-to-use-icon" />
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="w-full max-w-[1920px] px-[312px] pt-20">
+        <div class="w-full flex items-start justify-between">
+          <div class="mb-2 font-black text-[80px] leading-[96px] text-white">
+            首頁
+          </div>
+          <div class="flex items-center">
+            <div>
+              <img
+                src="../assets/Union.png"
+                class="w-[40px] h-[40px]"
+                alt="icon"
+              />
+            </div>
+            <div>
+              <img
+                src="../assets/AI工具王.png"
+                class="h-[40px] ml-[14px]"
+                alt="ai-tool"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="font-black text-[80px] leading-[96px] text-white border-b border-solid border-white pb-20"
+        >
+          定價
+        </div>
+      </div>
+      <div class="w-full max-w-[1920px] px-[312px] py-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <div class="font-bold text-base text-white mr-[100px]">
+              AI工具王 © 2023
+            </div>
+            <div class="flex items-center">
+              <div
+                class="font-bold text-base text-white mr-5 hover:cursor-pointer"
+              >
+                Facebook
+              </div>
+              <div
+                class="font-bold text-base text-white mr-5 hover:cursor-pointer"
+              >
+                Twitter
+              </div>
+              <div class="font-bold text-base text-white hover:cursor-pointer">
+                Instagram
+              </div>
+            </div>
+          </div>
+          <div>
+            <a href="#top-section" class="flex items-center">
+              <div class="mr-4 font-bold text-base text-white">Back to top</div>
+              <div class="w-[11px] h-[11px]">
+                <img src="../assets/UpArrow.png" alt="back-to-top" />
+              </div>
+            </a>
           </div>
         </div>
       </div>
