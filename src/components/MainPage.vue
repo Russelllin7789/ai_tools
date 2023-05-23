@@ -249,7 +249,7 @@
         </div>
       </div>
       <div class="w-full bg-white rounded-[160px] pb-[160px]">
-        <div class="flex flex-col items-center justify-center px-[100px]">
+        <div class="flex flex-col items-center justify-center px-[180px]">
           <div
             class="font-black text-black text-[80px] leading-[96px] mt-[160px] mb-[80px]"
           >
@@ -596,6 +596,38 @@
                 </div>
               </li>
             </ul>
+          </div>
+          <div class="w-full flex items-center mt-4">
+            <ul class="w-full flex items-center justify-end">
+              <li
+                class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl bg-black text-white mr-1 hover:cursor-pointer"
+              >
+                1
+              </li>
+              <li
+                class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-1 hover:cursor-pointer"
+              >
+                2
+              </li>
+              <li
+                class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-1 hover:cursor-pointer"
+              >
+                3
+              </li>
+              <li
+                class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-1 hover:cursor-pointer"
+              >
+                4
+              </li>
+              <li
+                class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-6 hover:cursor-pointer"
+              >
+                5
+              </li>
+            </ul>
+            <div class="w-[5px] h-[8px] hover:cursor-pointer">
+              <img src="../assets/RightArrow.png" alt="more-page" />
+            </div>
           </div>
         </div>
       </div>
