@@ -669,8 +669,12 @@
       </div>
       <div class="w-full max-w-[1920px] px-[312px] pt-20">
         <div class="w-full flex items-start justify-between">
-          <div class="mb-2 font-black text-[80px] leading-[96px] text-white">
-            首頁
+          <div>
+            <RouterLink
+              to="/"
+              class="mb-2 font-black text-[80px] leading-[96px] text-white"
+              >首頁</RouterLink
+            >
           </div>
           <div class="flex items-center">
             <div>
@@ -689,10 +693,12 @@
             </div>
           </div>
         </div>
-        <div
-          class="font-black text-[80px] leading-[96px] text-white border-b border-solid border-white pb-20"
-        >
-          定價
+        <div>
+          <RouterLink
+            to="/price"
+            class="font-black text-[80px] leading-[96px] text-white border-b border-solid border-white pb-20"
+            >定價</RouterLink
+          >
         </div>
       </div>
       <div class="w-full max-w-[1920px] px-[312px] py-8">
