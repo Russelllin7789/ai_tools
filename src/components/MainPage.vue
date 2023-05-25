@@ -22,8 +22,18 @@
             </div>
           </div>
           <ul class="flex items-center">
-            <li class="font-bold text-base text-white">首頁</li>
-            <li class="font-bold text-base ml-5 text-white">定價</li>
+            <li>
+              <router-link class="font-bold text-base text-white" to="/"
+                >首頁</router-link
+              >
+            </li>
+            <li>
+              <router-link
+                class="font-bold text-base ml-5 text-white"
+                to="/price"
+                >定價</router-link
+              >
+            </li>
           </ul>
         </div>
         <div class="w-full">
