@@ -4,6 +4,7 @@ import Main from "./components/MainPage.vue";
 
 <template>
   <div>
+    <router-view></router-view>
     <Main />
   </div>
 </template>
