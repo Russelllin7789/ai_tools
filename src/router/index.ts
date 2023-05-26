@@ -10,12 +10,12 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "Main",
-    component: () => import("@/components/MainPage.vue"),
+    component: () => import("@/views/MainPage.vue"),
   },
   {
     path: "/price",
     name: "Price",
-    component: () => import("@/components/PricePage.vue"),
+    component: () => import("@/views/PricePage.vue"),
   },
 ];
 
