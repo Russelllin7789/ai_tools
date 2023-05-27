@@ -1,53 +1,16 @@
 <template>
   <div>
     <div class="flex flex-col items-center h-full w-full bg-black">
-      <div class="max-w-[1920px] px-[312px]">
+      <div class="w-full max-w-[1920px] px-[312px]">
         <Header />
         <div class="w-full">
-          <div class="py-10">
-            <div class="font-black text-[120px] leading-[144px] text-white">
-              透過
-            </div>
-            <div class="font-black text-[120px] leading-[144px] text-white">
-              AI工具王的
-            </div>
-            <div class="font-black text-[120px] leading-[144px] text-white">
-              強大模型
-            </div>
-            <div class="font-black text-[120px] leading-[144px] text-white">
-              讓您的業務更聰明
-            </div>
-          </div>
-          <div>
-            <button
-              class="border border-solid border-white bg-black text-[20px] leading-[24px] text-white font-black px-10 py-5 rounded-2xl"
-            >
-              開始使用
-            </button>
-          </div>
-          <div class="flex w-full justify-end pt-[100px]">
-            <div>
-              <img
-                src="../assets/3.png"
-                alt="anime-icon-1"
-                class="w-[80px] h-[80px]"
-              />
-            </div>
-            <div>
-              <img
-                src="../assets/3.png"
-                alt="anime-icon-2"
-                class="w-[80px] h-[80px]"
-              />
-            </div>
-            <div>
-              <img
-                src="../assets/3.png"
-                alt="anime-icon-3"
-                class="w-[80px] h-[80px]"
-              />
-            </div>
-          </div>
+          <Slogan
+            slogan-one="透過"
+            slogan-two="AI工具王的"
+            slogan-three="強大模型"
+            slogan-four="讓您的業務更聰明"
+            :is-for-price="false"
+          />
           <div class="w-full py-[160px]">
             <div class="flex justify-between">
               <div class="w-[30%] section-title text-white">我們的服務</div>
@@ -112,7 +75,7 @@
               </div>
             </div>
             <div class="flex justify-between">
-              <div class="p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
+              <div class="flex flex-col p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
                 <div class="flex">
                   <div class="w-3.5 h-3.5 p-[1px]">
                     <img src="../assets/Star.png" alt="star-icon" />
@@ -131,7 +94,7 @@
                   </div>
                 </div>
                 <p
-                  class="w-full min-h-[215px] my-5 font-normal text-base text-white"
+                  class="w-full min-h-[215px] my-5 font-normal text-base text-white grow"
                 >
                   非常喜歡 AI工具王 提供的 AI
                   模型租賃服務，使用起來非常方便，而且效果非常好。對於我們公司的業務來說，這個服務非常重要，因為我們需要大量的數據進行分析和預測，AI工具王
@@ -147,7 +110,7 @@
                   </div>
                 </div>
               </div>
-              <div class="p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
+              <div class="flex flex-col p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
                 <div class="flex">
                   <div class="w-3.5 h-3.5 p-[1px]">
                     <img src="../assets/Star.png" alt="star-icon" />
@@ -166,7 +129,7 @@
                   </div>
                 </div>
                 <p
-                  class="w-full min-h-[215px] my-5 font-normal text-base text-white"
+                  class="w-full min-h-[215px] my-5 font-normal text-base text-white grow"
                 >
                   作為一家醫療器材公司，我們非常關注人工智能技術的應用，而
                   AI工具王 提供的 AI
@@ -184,7 +147,7 @@
                   </div>
                 </div>
               </div>
-              <div class="p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
+              <div class="flex flex-col p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
                 <div class="flex">
                   <div class="w-3.5 h-3.5 p-[1px]">
                     <img src="../assets/Star.png" alt="star-icon" />
@@ -203,7 +166,7 @@
                   </div>
                 </div>
                 <p
-                  class="w-full min-h-[215px] my-5 font-normal text-base text-white"
+                  class="w-full min-h-[215px] my-5 font-normal text-base text-white grow"
                 >
                   我們銀行一直在尋找能夠幫助我們提高風險控制和客戶服務的解決方案，而
                   AI工具王 提供的 AI 模型租賃服務正好滿足了我們的需求。我們使用
@@ -254,4 +217,5 @@
 import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
+import Slogan from "@/components/SloganSection.vue";
 </script>
