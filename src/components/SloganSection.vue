@@ -43,32 +43,30 @@
         isForPrice ? 'justify-start' : 'justify-end'
       } pt-[100px]`"
     >
-      <div>
+      <div class="w-[80px] h-[80px] overflow-hidden">
         <img
           src="../assets/3.png"
           alt="anime-icon-1"
-          class="w-[80px] h-[80px]"
+          :class="`${isThirdSlide ? 'animate-slideUp' : ''}`"
         />
       </div>
-      <div>
+      <div class="w-[80px] h-[80px] overflow-hidden">
         <img
           src="../assets/3.png"
           alt="anime-icon-2"
-          class="w-[80px] h-[80px]"
+          :class="`${isSecondSlide ? 'animate-slideUp' : ''}`"
         />
       </div>
-      <div>
-        <img
-          src="../assets/3.png"
-          alt="anime-icon-3"
-          class="w-[80px] h-[80px]"
-        />
+      <div class="w-[80px] h-[80px] overflow-hidden">
+        <img src="../assets/3.png" alt="anime-icon-3" class="animate-slideUp" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
+
 defineProps<{
   sloganOne: string;
   sloganTwo: string;
@@ -76,4 +74,32 @@ defineProps<{
   sloganThree?: string;
   sloganFour?: string;
 }>();
+
+const isSecondSlide = ref(false);
+const isThirdSlide = ref(false);
+const timerOne = ref<ReturnType<typeof setTimeout> | null>(null);
+const timerTwo = ref<ReturnType<typeof setTimeout> | null>(null);
+
+onMounted(() => {
+  if (timerOne.value) {
+    clearTimeout(timerOne.value);
+  } else {
+    timerOne.value = setTimeout(() => {
+      isSecondSlide.value = true;
+    }, 250);
+  }
+
+  if (timerTwo.value) {
+    clearTimeout(timerTwo.value);
+  } else {
+    timerTwo.value = setTimeout(() => {
+      isThirdSlide.value = true;
+    }, 500);
+  }
+});
+
+onUnmounted(() => {
+  clearTimeout(timerOne.value as ReturnType<typeof setTimeout>);
+  clearTimeout(timerTwo.value as ReturnType<typeof setTimeout>);
+});
 </script>
