@@ -82,6 +82,11 @@
         </div>
       </div>
       <Cards />
+      <div class="w-full max-w-[1920px] px-[312px] pt-[160px]">
+        <div class="border-b border-solid border-white pb-[160px]">
+          <div class="section-title text-white">常見問題</div>
+        </div>
+      </div>
       <Footer />
     </div>
   </div>
