@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-white rounded-[160px] pb-[160px]">
+  <div class="w-full bg-white rounded-[160px] pb-[160px] flex justify-center">
     <div
       class="flex flex-col items-center justify-center max-w-[1920px] px-[312px]"
     >

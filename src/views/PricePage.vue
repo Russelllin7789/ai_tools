@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="flex flex-col items-center h-full w-full bg-black">
-      <div class="w-full max-w-[1920px] px-[312px]">
+      <div
+        class="w-full flex flex-col items-center justify-center max-w-[1920px] px-[312px] min-w-[1024px]"
+      >
         <Header />
         <Slogan
           slogan-one="用多少，"
