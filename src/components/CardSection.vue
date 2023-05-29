@@ -40,37 +40,51 @@
         </div>
         <div class="flex items-center justify-center">
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] mr-2 cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 0 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             全部
           </div>
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] mr-2 cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 1 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             聊天
           </div>
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] mr-2 cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 2 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             影像辨識
           </div>
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] mr-2 cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 3 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             翻譯
           </div>
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] mr-2 cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 4 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             行銷
           </div>
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] mr-2 cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 5 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             客服
           </div>
           <div
-            class="rounded-2xl px-4 py-2 font-bold text-base text-[#919191] leading-[150%] cursor-pointer active:bg-[#f2f2f2] active:text-[#020202]"
+            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
+              category === 6 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+            }`"
           >
             生產力
           </div>
@@ -93,7 +107,7 @@
             class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
           >
             <div class="flex flex-col h-[560px]">
-              <div class="h-[312px]">
+              <div class="h-[280px] img-container">
                 <img
                   src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool1.png?raw=true"
                   alt="chatbot-builder"
@@ -101,7 +115,7 @@
                 />
               </div>
               <div
-                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2]"
+                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2] max-h-[145px] overflow-y-auto"
               >
                 <div class="font-black text-xl mb-3 leading-[120%] text-black">
                   Chatbot Builder
@@ -133,7 +147,7 @@
             class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
           >
             <div class="flex flex-col h-[560px]">
-              <div class="h-[312px]">
+              <div class="h-[280px] img-container">
                 <img
                   src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool2.png?raw=true"
                   alt="image-recognition-platform"
@@ -141,7 +155,7 @@
                 />
               </div>
               <div
-                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2]"
+                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2] max-h-[145px] overflow-y-auto"
               >
                 <div class="font-black text-xl mb-3 leading-[120%] text-black">
                   Image Recognition Platform
@@ -173,7 +187,7 @@
             class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
           >
             <div class="flex flex-col h-[560px]">
-              <div class="h-[312px]">
+              <div class="h-[280px] img-container">
                 <img
                   src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool3.png?raw=true"
                   alt="language-translation-API"
@@ -181,7 +195,7 @@
                 />
               </div>
               <div
-                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2]"
+                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2] max-h-[145px] overflow-y-auto"
               >
                 <div class="font-black text-xl mb-3 leading-[120%] text-black">
                   Language Translation API
@@ -213,7 +227,7 @@
             class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
           >
             <div class="flex flex-col h-[560px]">
-              <div class="h-[312px]">
+              <div class="h-[280px] img-container">
                 <img
                   src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool4.png?raw=true"
                   alt="sentiment-analysis-API"
@@ -221,7 +235,7 @@
                 />
               </div>
               <div
-                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2]"
+                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2] max-h-[145px] overflow-y-auto"
               >
                 <div class="font-black text-xl mb-3 leading-[120%] text-black">
                   Sentiment Analysis API
@@ -253,7 +267,7 @@
             class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
           >
             <div class="flex flex-col h-[560px]">
-              <div class="h-[312px]">
+              <div class="h-[280px] img-container">
                 <img
                   src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool5.png?raw=true"
                   alt="fraud-detection-platform"
@@ -261,7 +275,7 @@
                 />
               </div>
               <div
-                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2]"
+                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2] max-h-[145px] overflow-y-auto"
               >
                 <div class="font-black text-xl mb-3 leading-[120%] text-black">
                   Fraud Detection Platform
@@ -293,7 +307,7 @@
             class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
           >
             <div class="flex flex-col h-[560px]">
-              <div class="h-[312px]">
+              <div class="h-[280px] img-container">
                 <img
                   src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool6.png?raw=true"
                   alt="voice-assistant-SDK"
@@ -301,7 +315,7 @@
                 />
               </div>
               <div
-                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2]"
+                class="py-5 px-8 grow border-b border-solid border-[#f2f2f2] max-h-[145px] overflow-y-auto"
               >
                 <div class="font-black text-xl mb-3 leading-[120%] text-black">
                   Voice Assistant SDK
@@ -366,3 +380,28 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+
+const category = ref(0);
+</script>
+
+<style scoped>
+.img-container {
+  max-width: 415px;
+  max-height: 286px;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.img-container img:hover {
+  transform: scale(1.5, 1.5);
+}
+</style>

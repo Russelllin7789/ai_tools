@@ -14,7 +14,7 @@
             <div
               v-for="(plan, index) in plans"
               :key="index"
-              class="w-[49%] mb-5 border border-solid border-[#525252]/80 rounded-2xl py-5"
+              class="w-[49%] mb-5 border border-solid border-[#525252]/80 rounded-2xl py-5 hover:cursor-pointer hover:border-white"
             >
               <div
                 class="w-full min-h-[234px] border-b border-solid border-[#525252]/80 px-8"
