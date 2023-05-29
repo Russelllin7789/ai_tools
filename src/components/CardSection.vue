@@ -1,7 +1,7 @@
 <template>
   <div class="w-full bg-white rounded-[160px] pb-[160px] flex justify-center">
     <div
-      class="flex flex-col items-center justify-center max-w-[1920px] px-[312px]"
+      class="flex flex-col items-center justify-center max-w-[1920px] px-[312px] min-w-[1024px]"
     >
       <div
         class="font-black text-black text-[80px] leading-[96px] mt-[160px] mb-[80px]"
@@ -26,7 +26,7 @@
         />
         <label for="search-input" />
       </div>
-      <div class="flex w-full items-center justify-between">
+      <div class="flex w-full items-center justify-between flex-wrap">
         <div>
           <button
             class="flex items-center px-10 py-5 border border-solid border-[#f2f2f2] rounded-2xl text-base text-black bg-white font-normal"

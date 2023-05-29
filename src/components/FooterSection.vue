@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-[1920px] px-[312px] pt-20">
+  <div class="w-full max-w-[1920px] px-[312px] min-w-[1024px] pt-20">
     <div class="w-full flex items-start justify-between">
       <div>
         <RouterLink
@@ -29,7 +29,7 @@
       >
     </div>
   </div>
-  <div class="w-full max-w-[1920px] px-[312px] pb-8 mt-20">
+  <div class="w-full max-w-[1920px] px-[312px] min-w-[1024px] pb-8 mt-20">
     <div
       class="flex items-center justify-between border-t border-solid border-white pt-8"
     >
@@ -37,11 +37,15 @@
         <div class="font-bold text-base text-white mr-[100px]">
           AI工具王 © 2023
         </div>
-        <div class="flex items-center">
-          <div class="font-bold text-base text-white mr-5 hover:cursor-pointer">
+        <div class="flex items-center flex-wrap">
+          <div
+            class="font-bold text-base text-white mr-5 mb-2 hover:cursor-pointer"
+          >
             Facebook
           </div>
-          <div class="font-bold text-base text-white mr-5 hover:cursor-pointer">
+          <div
+            class="font-bold text-base text-white mr-5 mb-2 hover:cursor-pointer"
+          >
             Twitter
           </div>
           <div class="font-bold text-base text-white hover:cursor-pointer">
