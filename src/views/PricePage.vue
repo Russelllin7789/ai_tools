@@ -83,8 +83,18 @@
       </div>
       <Cards />
       <div class="w-full max-w-[1920px] px-[312px] pt-[160px]">
-        <div class="border-b border-solid border-white pb-[160px]">
+        <div
+          class="w-full flex items-start justify-between border-b border-solid border-white pb-[160px]"
+        >
           <div class="section-title text-white">常見問題</div>
+          <div>
+            <QARow
+              v-for="(qa, index) in qaPairs"
+              :key="qa.id"
+              :question-and-answer="qa"
+              :class="index !== 0 ? 'mt-[15px]' : ''"
+            />
+          </div>
         </div>
       </div>
       <Footer />
@@ -99,6 +109,8 @@ import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
 import Slogan from "@/components/SloganSection.vue";
+import QARow from "@/components/QARow.vue";
+import { IQAs } from "@/interface/IQAs";
 
 interface IDetails {
   name: string;
@@ -182,6 +194,39 @@ const userRules = ref<IDetails[]>([
         description: "需對使用過程中產生的數據負責，不得擅自泄露數據。",
       },
     ],
+  },
+]);
+
+const qaPairs = ref<IQAs[]>([
+  {
+    id: "first",
+    question: "如何選擇適合的AI模型？",
+    answer:
+      "選擇適合的 AI 模型需要考慮您的應用場景、需要解決的問題、可用的資源以及預算等因素。可以透過對比不同模型的性能、準確率、速度等指標，以及與其他用戶的評價和反饋，來選擇最適合的模型。",
+  },
+  {
+    id: "second",
+    question: "租用模型的費用是如何計算的？",
+    answer:
+      "租用模型的費用通常會根據模型的性能和使用時間等因素進行計算。具體而言，模型的性能可以根據其精度、速度、佔用資源等指標來評估；而使用時間可以根據租用時間的長短來計算，通常會按小時、天或月來計算。綜合考慮這些因素，系統會自動計算出對應的租用費用。",
+  },
+  {
+    id: "third",
+    question: "如何進行付款？",
+    answer:
+      "付款方式可以透過網站上提供的線上支付平台進行。具體而言，您可以選擇使用信用卡、銀行轉帳、電子錢包等不同的支付方式進行支付。在支付前，您需要先登錄網站並選擇適合的租用方案，系統會自動計算出對應的租用費用和支付金額，然後您可以選擇適合的支付方式進行支付，完成支付後，系統會自動向您提供相應的服務。",
+  },
+  {
+    id: "forth",
+    question: "租用模型的期限是多久？",
+    answer:
+      "租用模型的期限可以根據您的需求進行設置，通常可以選擇幾個小時、幾天或幾個月等不同的時間段。",
+  },
+  {
+    id: "fifth",
+    question: "如果在使用過程中遇到問題，應該怎麼處理？",
+    answer:
+      "如果在使用過程中遇到問題，您可以聯繫客服或技術支持人員進行諮詢或報告問題。您也可以透過網站上的幫助中心或社群論壇尋找相關解決方案和回答。",
   },
 ]);
 </script>
