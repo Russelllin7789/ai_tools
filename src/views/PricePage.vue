@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-col items-center h-full w-full bg-black">
       <div
-        class="w-full flex flex-col items-center justify-center max-w-[1920px] px-[312px] min-w-[1024px]"
+        class="w-full flex flex-col items-center justify-center container-wrapper"
       >
         <Header />
         <Slogan
@@ -84,7 +84,7 @@
         </div>
       </div>
       <Cards />
-      <div class="w-full max-w-[1920px] px-[312px] pt-[160px] min-w-[1024px]">
+      <div class="w-full container-wrapper pt-[160px]">
         <div
           class="w-full flex items-start justify-between border-b border-solid border-white pb-[160px]"
         >

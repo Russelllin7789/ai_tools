@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col items-center h-full w-full bg-black">
-      <div class="w-full max-w-[1920px] px-[312px] min-w-[1024px]">
+      <div class="w-full container-wrapper">
         <Header />
         <div class="w-full">
           <Slogan
@@ -189,7 +189,7 @@
         </div>
       </div>
       <Cards />
-      <div class="w-full max-w-[1920px] px-[312px] pt-[158px] min-w-[1024px]">
+      <div class="w-full container-wrapper pt-[158px]">
         <div
           class="w-full flex flex-col items-center justify-center border-b border-solid border-white pb-[158px]"
         >

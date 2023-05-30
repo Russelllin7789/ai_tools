@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-[1920px] px-[312px] min-w-[1024px] pt-20">
+  <div class="w-full container-wrapper py-20">
     <div class="w-full flex items-start justify-between">
       <div>
         <RouterLink
@@ -29,7 +29,7 @@
       >
     </div>
   </div>
-  <div class="w-full max-w-[1920px] px-[312px] min-w-[1024px] pb-8 mt-20">
+  <div class="w-full container-wrapper pb-8 mt-20">
     <div
       class="flex items-center justify-between border-t border-solid border-white pt-8"
     >

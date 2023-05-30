@@ -83,3 +83,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.container-wrapper {
+  max-width: 1320px;
+  width: calc(100% - 24px);
+  margin: auto;
+}
