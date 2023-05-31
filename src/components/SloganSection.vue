@@ -1,22 +1,26 @@
 <template>
   <div class="w-full">
     <div class="py-10">
-      <div class="font-black text-[120px] leading-[144px] text-white">
+      <div
+        class="font-black text-[48px] leading-[120%] text-white md:text-[120px] md:leading-[144px]"
+      >
         {{ sloganOne }}
       </div>
-      <div class="font-black text-[120px] leading-[144px] text-white">
+      <div
+        class="font-black text-[48px] leading-[120%] text-white md:text-[120px] md:leading-[144px]"
+      >
         {{ sloganTwo }}
       </div>
       <div>
         <div
           v-if="sloganThree"
-          class="font-black text-[120px] leading-[144px] text-white"
+          class="font-black text-[48px] leading-[120%] text-white md:text-[120px] md:leading-[144px]"
         >
           {{ sloganThree }}
         </div>
         <div
           v-if="sloganFour"
-          class="font-black text-[120px] leading-[144px] text-white"
+          class="font-black text-[48px] leading-[120%] text-white md:text-[120px] md:leading-[144px]"
         >
           {{ sloganFour }}
         </div>

@@ -1,8 +1,10 @@
 <template>
-  <div class="w-full bg-white rounded-[160px] pb-[160px] flex justify-center">
+  <div
+    class="w-full bg-white rounded-[20px] pb-[160px] flex justify-center md:rounded-[160px]"
+  >
     <div class="flex flex-col items-center justify-center container-wrapper">
       <div
-        class="font-black text-black text-[80px] leading-[96px] mt-[160px] mb-[80px]"
+        class="font-black text-black section-title mt-[80px] mb-[80px] px-[40px] md:px-0 md:text-[80px] md:leading-[96px] md:mt-[160px]"
       >
         這些超酷的應用，都來自 AI工具王
       </div>
@@ -102,7 +104,7 @@
       <div class="w-full mt-10">
         <ul class="flex items-center justify-between flex-wrap">
           <li
-            class="w-[32%] rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6"
+            class="w-full rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6 md:w-[32%]"
           >
             <div class="flex flex-col h-[560px]">
               <div class="h-[280px] img-container">

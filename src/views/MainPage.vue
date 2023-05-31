@@ -12,17 +12,23 @@
             :is-for-price="false"
           />
           <div class="w-full py-[160px]">
-            <div class="flex justify-between">
-              <div class="w-[30%] section-title text-white">我們的服務</div>
-              <div class="w-[65%]">
-                <div class="font-black text-5xl text-white">
+            <div class="flex flex-col md:flex-row md:justify-between">
+              <div
+                class="w-full text-[20px] leading-[24px] mb-6 md:mb-0 md:w-[30%] md:text-[32px] md:leading-[38.4px] text-white"
+              >
+                我們的服務
+              </div>
+              <div class="w-full md:w-[65%]">
+                <div class="font-black section-title md:text-5xl text-white">
                   我們相信透過 AI 技術，<br />包括圖像識別、自然語言處理和機器翻譯等，讓您更快、更準確地做出決策。
                 </div>
               </div>
             </div>
-            <div class="flex mt-20 justify-between">
+            <div
+              class="flex mt-12 flex-col md:flex-row md:justify-between md:mt-20"
+            >
               <div
-                class="py-20 px-10 w-[32%] border border-solid border-[#525252]/80 rounded-2xl"
+                class="py-20 px-10 mb-3 w-full border border-solid border-[#525252]/80 rounded-2xl md:w-[32%] md:mb-0"
               >
                 <div class="w-[80px] h-[80px] px-5">
                   <img src="../assets/Vector.png" alt="rapid" />
@@ -33,7 +39,7 @@
                 </div>
               </div>
               <div
-                class="py-20 px-10 w-[32%] border border-solid border-[#525252]/80 rounded-2xl"
+                class="py-20 px-10 mb-3 w-full border border-solid border-[#525252]/80 rounded-2xl md:w-[32%] md:mb-0"
               >
                 <div class="w-[80px] h-[80px] px-1">
                   <img src="../assets/Vector_1.png" alt="agile" />
@@ -44,7 +50,7 @@
                 </div>
               </div>
               <div
-                class="py-20 px-10 w-[32%] border border-solid border-[#525252]/80 rounded-2xl"
+                class="py-20 px-10 w-full border border-solid border-[#525252]/80 rounded-2xl md:w-[32%]"
               >
                 <div class="w-[80px] h-[80px] px-1">
                   <img src="../assets/Vector_2.png" alt="extendable" />
