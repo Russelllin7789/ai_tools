@@ -387,7 +387,7 @@ const category = ref(0);
 
 <style scoped>
 .img-container {
-  max-width: 415px;
+  width: 100%;
   max-height: 286px;
   overflow: hidden;
 }

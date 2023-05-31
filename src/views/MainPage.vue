@@ -59,18 +59,18 @@
           <div class="pb-[160px]">
             <div class="section-title text-white">來自合作夥伴</div>
             <div class="mt-20">
-              <div>
+              <div class="w-full overflow-hidden">
                 <img
                   src="../assets/Logo1.png"
                   alt="logo-section-one"
-                  class="h-[40px]"
+                  class="h-[40px] w-full object-cover"
                 />
               </div>
-              <div class="pt-5 pb-[160px]">
+              <div class="pt-5 pb-[160px] w-full overflow-hidden relative">
                 <img
                   src="../assets/Logo2.png"
                   alt="logo-section-two"
-                  class="h-[40px]"
+                  class="h-[40px] w-full object-cover"
                 />
               </div>
             </div>

@@ -38,14 +38,10 @@
           AI工具王 © 2023
         </div>
         <div class="flex items-center flex-wrap">
-          <div
-            class="font-bold text-base text-white mr-5 mb-2 hover:cursor-pointer"
-          >
+          <div class="font-bold text-base text-white mr-5 hover:cursor-pointer">
             Facebook
           </div>
-          <div
-            class="font-bold text-base text-white mr-5 mb-2 hover:cursor-pointer"
-          >
+          <div class="font-bold text-base text-white mr-5 hover:cursor-pointer">
             Twitter
           </div>
           <div class="font-bold text-base text-white hover:cursor-pointer">
