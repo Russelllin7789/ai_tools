@@ -194,7 +194,7 @@
           </div>
         </div>
       </div>
-      <Cards />
+      <Cards :cards="aiCards" />
       <div class="w-full container-wrapper pt-[158px]">
         <div
           class="w-full flex flex-col items-center justify-center border-b border-solid border-white pb-[158px]"
@@ -220,8 +220,18 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, computed } from "vue";
 import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
 import Slogan from "@/components/SloganSection.vue";
+import { useAiWorkStore } from "@/stores/aiWorkStore";
+import { IAIWork } from "@/interface/IAIWork";
+
+const aiWorkStore = useAiWorkStore();
+const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
+
+onMounted(async () => {
+  aiWorkStore.fetchAiDetails();
+});
 </script>

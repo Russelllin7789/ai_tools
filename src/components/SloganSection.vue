@@ -47,21 +47,21 @@
         isForPrice ? 'justify-start' : 'justify-end'
       } pt-[100px]`"
     >
-      <div class="w-[80px] h-[80px] overflow-hidden">
+      <div class="w-[117px] h-[117px] overflow-hidden md:w-[80px] md:h-[80px]">
         <img
           src="../assets/3.png"
           alt="anime-icon-1"
           :class="`${isThirdSlide ? 'animate-slideUp' : ''}`"
         />
       </div>
-      <div class="w-[80px] h-[80px] overflow-hidden">
+      <div class="w-[117px] h-[117px] overflow-hidden md:w-[80px] md:h-[80px]">
         <img
           src="../assets/3.png"
           alt="anime-icon-2"
           :class="`${isSecondSlide ? 'animate-slideUp' : ''}`"
         />
       </div>
-      <div class="w-[80px] h-[80px] overflow-hidden">
+      <div class="w-[117px] h-[117px] overflow-hidden md:w-[80px] md:h-[80px]">
         <img src="../assets/3.png" alt="anime-icon-3" class="animate-slideUp" />
       </div>
     </div>
