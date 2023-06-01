@@ -33,22 +33,7 @@
     <div
       class="flex items-center justify-between border-t border-solid border-white pt-8"
     >
-      <div class="flex items-center">
-        <div class="font-bold text-base text-white mr-[100px]">
-          AI工具王 © 2023
-        </div>
-        <div class="flex items-center flex-wrap">
-          <div class="font-bold text-base text-white mr-5 hover:cursor-pointer">
-            Facebook
-          </div>
-          <div class="font-bold text-base text-white mr-5 hover:cursor-pointer">
-            Twitter
-          </div>
-          <div class="font-bold text-base text-white hover:cursor-pointer">
-            Instagram
-          </div>
-        </div>
-      </div>
+      <SocialSection />
       <div
         class="flex items-center hover:cursor-pointer"
         @click="handleScrollToTop"
@@ -63,6 +48,8 @@
 </template>
 
 <script setup lang="ts">
+import SocialSection from "./SocialSection.vue";
+
 const handleScrollToTop = () => {
   window.scroll({
     top: 0,
