@@ -114,7 +114,9 @@
         <div
           class="w-full flex flex-col items-center justify-center border-b border-solid border-white pb-[158px]"
         >
-          <div class="font-black text-[48px] leading-[57.6px] text-white mb-10">
+          <div
+            class="font-black px-[75px] text-[32px] leading-[38.4px] text-white mb-10 md:text-[48px] md:leading-[57.6px] md:px-0"
+          >
             現在就來建立屬於你的服務吧
           </div>
           <button
@@ -129,7 +131,7 @@
           </button>
         </div>
       </div>
-      <Footer />
+      <Footer :is-mobile="isMobile" />
     </div>
   </div>
 </template>

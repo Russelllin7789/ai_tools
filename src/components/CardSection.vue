@@ -129,7 +129,7 @@
               <div
                 class="flex items-center justify-between py-5 px-8 border-b border-solid border-[#f2f2f2] text-base text-black"
               >
-                <div class="font-bold">AI 模型</div>
+                <div class="font-bold">{{ card.model }}</div>
                 <div>{{ card.discordId }}</div>
               </div>
               <div
@@ -137,10 +137,12 @@
               >
                 <div>#{{ card.type }}</div>
                 <div>
-                  <img
-                    src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/icons/share.png?raw=true"
-                    alt="share-icon"
-                  />
+                  <a :href="card.link" target="_blank">
+                    <img
+                      src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/icons/share.png?raw=true"
+                      alt="share-icon"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -150,32 +152,19 @@
       <div class="w-full flex items-center mt-4">
         <ul class="w-full flex items-center justify-end">
           <li
-            class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl bg-black text-white mr-1 hover:cursor-pointer"
+            v-for="n in pageObj.total_pages"
+            :key="n"
+            :class="`flex items-center justify-center w-[48px] h-[48px] rounded-2xl bg-black text-white ${
+              n === 1 ? 'mr-6' : 'mr-1'
+            } hover:cursor-pointer`"
           >
-            1
-          </li>
-          <li
-            class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-1 hover:cursor-pointer"
-          >
-            2
-          </li>
-          <li
-            class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-1 hover:cursor-pointer"
-          >
-            3
-          </li>
-          <li
-            class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-1 hover:cursor-pointer"
-          >
-            4
-          </li>
-          <li
-            class="flex items-center justify-center w-[48px] h-[48px] rounded-2xl text-black mr-6 hover:cursor-pointer"
-          >
-            5
+            {{ n }}
           </li>
         </ul>
-        <div class="w-[5px] h-[8px] hover:cursor-pointer">
+        <div
+          v-if="pageObj.has_next"
+          class="w-[5px] h-[8px] hover:cursor-pointer mr-4"
+        >
           <img src="../assets/RightArrow.png" alt="more-page" />
         </div>
       </div>
@@ -184,13 +173,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { IAIWork } from "@/interface/IAIWork";
+import { ref, computed } from "vue";
+import { IAIWork, IPage } from "@/interface/IAIWork";
+import { useAiWorkStore } from "@/stores/aiWorkStore";
 defineProps<{
   cards: IAIWork[];
 }>();
 
+const aiWorkStore = useAiWorkStore();
 const category = ref(0);
+const pageObj = computed((): IPage => aiWorkStore.page);
 </script>
 
 <style scoped>

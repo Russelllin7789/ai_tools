@@ -27,4 +27,4 @@ interface IAIDetails {
   };
 }
 
-export type { IAIDetails, IAIWork };
+export type { IAIDetails, IAIWork, IPage };

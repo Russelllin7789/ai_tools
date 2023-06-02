@@ -99,13 +99,13 @@
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer :is-mobile="isMobile" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
 
 import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
@@ -126,6 +126,8 @@ interface IDetails {
 
 const aiWorkStore = useAiWorkStore();
 const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
+const windowWidth = ref(window.innerWidth);
+const isMobile = ref(false);
 
 const plans = ref<IDetails[]>([
   {
@@ -236,4 +238,28 @@ const qaPairs = ref<IQAs[]>([
       "如果在使用過程中遇到問題，您可以聯繫客服或技術支持人員進行諮詢或報告問題。您也可以透過網站上的幫助中心或社群論壇尋找相關解決方案和回答。",
   },
 ]);
+
+const onResize = () => {
+  windowWidth.value = window.innerWidth;
+};
+
+watch(
+  () => windowWidth.value,
+  (val) => {
+    if (val < 768) {
+      isMobile.value = true;
+    } else {
+      isMobile.value = false;
+    }
+  },
+  { immediate: true }
+);
+
+onMounted(() => {
+  window.addEventListener("resize", onResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", onResize);
+});
 </script>
