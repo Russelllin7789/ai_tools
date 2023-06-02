@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col p-10 w-[32%] rounded-2xl bg-[#1E1E1E]">
+  <div class="flex flex-col p-10 md:w-[32%] rounded-2xl bg-[#1E1E1E] w-full">
     <div class="flex">
       <div class="w-3.5 h-3.5 p-[1px]">
         <img src="../assets/Star.png" alt="star-icon" />

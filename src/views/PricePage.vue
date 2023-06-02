@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      <Cards />
+      <Cards :cards="aiCards" />
       <div class="w-full container-wrapper pt-[160px]">
         <div
           class="w-full flex items-start justify-between border-b border-solid border-white pb-[160px]"
@@ -105,14 +105,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
 import Slogan from "@/components/SloganSection.vue";
 import QARow from "@/components/QARow.vue";
+import { useAiWorkStore } from "@/stores/aiWorkStore";
 import { IQAs } from "@/interface/IQAs";
+import { IAIWork } from "@/interface/IAIWork";
 
 interface IDetails {
   name: string;
@@ -121,6 +123,9 @@ interface IDetails {
     description: string;
   }[];
 }
+
+const aiWorkStore = useAiWorkStore();
+const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
 
 const plans = ref<IDetails[]>([
   {

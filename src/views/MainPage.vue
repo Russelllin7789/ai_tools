@@ -80,13 +80,31 @@
                 />
               </div>
             </div>
-            <div class="flex justify-between">
-              <Testimonial
-                v-for="testimonial in testimonials"
-                :key="testimonial.name"
-                :testimonial="testimonial"
-                class="md:hidden"
-              />
+            <div v-if="!isMobile" class="flex">
+              <div class="flex justify-between">
+                <Testimonial
+                  v-for="testimonial in testimonials"
+                  :key="testimonial.name"
+                  :testimonial="testimonial"
+                />
+              </div>
+            </div>
+            <div v-else>
+              <Swiper
+                class="flex"
+                :modules="modules"
+                :slides-per-view="1"
+                :space-between="20"
+                :pagination="{ clickable: true }"
+              >
+                <SwiperSlide
+                  v-for="testimonial in testimonials"
+                  :key="testimonial.name"
+                  class="pb-10"
+                >
+                  <Testimonial :testimonial="testimonial" />
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </div>
@@ -117,11 +135,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed } from "vue";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import VueSlickCarousel from "vue-slick-carousel";
-import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
+import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
 import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
@@ -132,6 +150,8 @@ import { ITestimonial } from "@/interface/ITestimonial";
 import Testimonial from "@/components/TestimonialSection.vue";
 
 const aiWorkStore = useAiWorkStore();
+const windowWidth = ref(window.innerWidth);
+const isMobile = ref(false);
 const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
 const testimonials: ITestimonial[] = [
   {
@@ -163,16 +183,30 @@ const testimonials: ITestimonial[] = [
   },
 ];
 
-const settings = {
-  dotsClass: "slick-dots custom-dot-class",
-  edgeFriction: 0.35,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
+const modules = [Pagination];
+
+const onResize = () => {
+  windowWidth.value = window.innerWidth;
 };
+
+watch(
+  () => windowWidth.value,
+  (val) => {
+    if (val < 768) {
+      isMobile.value = true;
+    } else {
+      isMobile.value = false;
+    }
+  },
+  { immediate: true }
+);
 
 onMounted(async () => {
   aiWorkStore.fetchAiDetails();
+  window.addEventListener("resize", onResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", onResize);
 });
 </script>
