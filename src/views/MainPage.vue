@@ -142,14 +142,16 @@ import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
+
 import Footer from "@/components/FooterSection.vue";
 import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
 import Slogan from "@/components/SloganSection.vue";
+import Testimonial from "@/components/TestimonialSection.vue";
+
 import { useAiWorkStore } from "@/stores/aiWorkStore";
 import { IAIWork } from "@/interface/IAIWork";
 import { ITestimonial } from "@/interface/ITestimonial";
-import Testimonial from "@/components/TestimonialSection.vue";
 
 const aiWorkStore = useAiWorkStore();
 const windowWidth = ref(window.innerWidth);
