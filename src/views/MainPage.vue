@@ -92,6 +92,7 @@
             <div v-else>
               <Swiper
                 class="flex"
+                navigation
                 :modules="modules"
                 :slides-per-view="1"
                 :space-between="20"
@@ -138,9 +139,10 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Footer from "@/components/FooterSection.vue";
@@ -187,7 +189,7 @@ const testimonials: ITestimonial[] = [
   },
 ];
 
-const modules = [Pagination];
+const modules = [Pagination, Navigation];
 
 const onResize = () => {
   windowWidth.value = window.innerWidth;
