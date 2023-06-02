@@ -106,7 +106,7 @@
           <li
             v-for="card in cards"
             :key="card.id"
-            class="w-full rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6 md:w-[32%]"
+            class="w-full rounded-2xl border border-solid border-[#f2f2f2] overflow-hidden mb-6 md:max-w-[49%] md:min-w-[32%]"
           >
             <div class="flex flex-col h-[560px]">
               <div class="h-[280px] img-container">
