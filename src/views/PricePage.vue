@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="flex flex-col items-center h-full w-full bg-black">
+    <Loading v-if="isLoading" />
+    <div v-else class="flex flex-col items-center h-full w-full bg-black">
       <div
         class="w-full flex flex-col items-center justify-center container-wrapper"
       >
@@ -112,6 +113,7 @@ import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
 import Slogan from "@/components/SloganSection.vue";
 import QARow from "@/components/QARow.vue";
+import Loading from "@/components/LoadingComponent.vue";
 
 import { useAiWorkStore } from "@/stores/aiWorkStore";
 import { IQAs } from "@/interface/IQAs";
@@ -127,6 +129,7 @@ interface IDetails {
 
 const aiWorkStore = useAiWorkStore();
 const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
+const isLoading = computed((): boolean => aiWorkStore.isLoading);
 const windowWidth = ref(window.innerWidth);
 const isMobile = ref(false);
 
@@ -256,7 +259,8 @@ watch(
   { immediate: true }
 );
 
-onMounted(() => {
+onMounted(async () => {
+  aiWorkStore.fetchAiDetails();
   window.addEventListener("resize", onResize);
 });
 

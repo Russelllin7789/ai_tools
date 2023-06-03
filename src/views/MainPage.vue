@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="flex flex-col items-center h-full w-full bg-black">
+    <Loading v-if="isLoading" />
+    <div v-else class="flex flex-col items-center h-full w-full bg-black">
       <div class="w-full container-wrapper">
         <Header />
         <div class="w-full">
@@ -150,6 +151,7 @@ import Header from "@/components/HeaderSection.vue";
 import Cards from "@/components/CardSection.vue";
 import Slogan from "@/components/SloganSection.vue";
 import Testimonial from "@/components/TestimonialSection.vue";
+import Loading from "@/components/LoadingComponent.vue";
 
 import { useAiWorkStore } from "@/stores/aiWorkStore";
 import { IAIWork } from "@/interface/IAIWork";
@@ -158,6 +160,7 @@ import { ITestimonial } from "@/interface/ITestimonial";
 const aiWorkStore = useAiWorkStore();
 const windowWidth = ref(window.innerWidth);
 const isMobile = ref(false);
+const isLoading = computed((): boolean => aiWorkStore.isLoading);
 const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
 const testimonials: ITestimonial[] = [
   {

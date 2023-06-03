@@ -101,7 +101,7 @@
           </button>
         </div>
       </div>
-      <div class="w-full mt-10">
+      <div v-if="cards.length >= 1" class="w-full mt-10">
         <ul class="flex items-center justify-between flex-wrap">
           <li
             v-for="card in cards"
@@ -149,7 +149,10 @@
           </li>
         </ul>
       </div>
-      <div class="w-full flex items-center mt-4">
+      <div
+        v-if="pageObj.total_pages !== -1"
+        class="w-full flex items-center mt-4"
+      >
         <ul class="w-full flex items-center justify-end">
           <li
             v-for="n in pageObj.total_pages"

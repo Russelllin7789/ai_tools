@@ -11,9 +11,11 @@ export const useAiWorkStore = defineStore("aiWorkStore", {
       has_pre: false,
       has_next: false,
     },
+    isLoading: false,
   }),
   actions: {
     async fetchAiDetails() {
+      this.isLoading = true;
       try {
         const { data } = await axios.get<IAIDetails>(
           "https://2023-engineer-camp.zeabur.app/api/v1/works"
@@ -23,6 +25,7 @@ export const useAiWorkStore = defineStore("aiWorkStore", {
       } catch (error) {
         console.log(error);
       }
+      this.isLoading = false;
     },
   },
 });
