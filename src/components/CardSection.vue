@@ -26,7 +26,9 @@
         />
         <label for="search-input" />
       </div>
-      <div class="flex w-full items-center justify-between flex-wrap">
+      <div
+        class="flex w-full items-center justify-between flex-wrap relative md:static"
+      >
         <div>
           <button
             class="flex items-center px-10 py-5 border border-solid border-[#f2f2f2] rounded-2xl text-base text-black bg-white font-normal"
@@ -38,7 +40,7 @@
             />
           </button>
         </div>
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center flex-wrap mt-4 md:mt-0">
           <div
             v-for="type in aiTypes"
             :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
@@ -52,7 +54,7 @@
             {{ type }}
           </div>
         </div>
-        <div>
+        <div class="absolute right-0 top-0 md:static">
           <button
             class="flex items-center px-10 py-5 border border-solid border-[#f2f2f2] rounded-2xl text-base text-black bg-white font-normal"
           >
