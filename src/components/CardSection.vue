@@ -40,53 +40,16 @@
         </div>
         <div class="flex items-center justify-center">
           <div
+            v-for="type in aiTypes"
             :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 0 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
+              category === type
+                ? 'bg-[#f2f2f2] text-[#020202]'
+                : 'text-[#919191]'
             }`"
+            :key="type"
+            @click="handleCategoryClicked(type)"
           >
-            全部
-          </div>
-          <div
-            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 1 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
-            }`"
-          >
-            聊天
-          </div>
-          <div
-            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 2 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
-            }`"
-          >
-            影像辨識
-          </div>
-          <div
-            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 3 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
-            }`"
-          >
-            翻譯
-          </div>
-          <div
-            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 4 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
-            }`"
-          >
-            行銷
-          </div>
-          <div
-            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 5 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
-            }`"
-          >
-            客服
-          </div>
-          <div
-            :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === 6 ? 'bg-[#f2f2f2] text-[#020202]' : 'text-[#919191]'
-            }`"
-          >
-            生產力
+            {{ type }}
           </div>
         </div>
         <div>
@@ -150,7 +113,7 @@
         </ul>
       </div>
       <div
-        v-if="pageObj.total_pages !== -1"
+        v-if="pageObj.total_pages !== -1 && cards.length >= 1"
         class="w-full flex items-center mt-4"
       >
         <ul class="w-full flex items-center justify-end">
@@ -177,15 +140,36 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
+
+import { EnumAIType } from "@/enum/EnumAIType";
 import { IAIWork, IPage } from "@/interface/IAIWork";
 import { useAiWorkStore } from "@/stores/aiWorkStore";
+
 defineProps<{
   cards: IAIWork[];
 }>();
 
+const emit = defineEmits<{
+  (e: "typeChosen", type: string): void;
+}>();
+
 const aiWorkStore = useAiWorkStore();
-const category = ref(0);
+const category = ref("全部");
+const aiTypes = ref<string[]>([
+  EnumAIType.ALL,
+  EnumAIType.CUSTOMER_SERVICE,
+  EnumAIType.LIFE_APPLICATION,
+  EnumAIType.MARKETING_COPYWRITING,
+  EnumAIType.PROGRAMMING_KNOWLEDGE,
+  EnumAIType.QA,
+  EnumAIType.TRANSLATION_ASSISTANT,
+]);
 const pageObj = computed((): IPage => aiWorkStore.page);
+
+const handleCategoryClicked = (type: string) => {
+  emit("typeChosen", type);
+  category.value = type;
+};
 </script>
 
 <style scoped>

@@ -111,7 +111,7 @@
           </div>
         </div>
       </div>
-      <Cards :cards="aiCards" />
+      <Cards :cards="aiCards" @type-chosen="(type: string) => aiType = type" />
       <div class="w-full container-wrapper pt-[158px]">
         <div
           class="w-full flex flex-col items-center justify-center border-b border-solid border-white pb-[158px]"
@@ -160,8 +160,13 @@ import { ITestimonial } from "@/interface/ITestimonial";
 const aiWorkStore = useAiWorkStore();
 const windowWidth = ref(window.innerWidth);
 const isMobile = ref(false);
+const aiType = ref("全部");
 const isLoading = computed((): boolean => aiWorkStore.isLoading);
-const aiCards = computed((): IAIWork[] => aiWorkStore.aiDetails);
+const aiCards = computed((): IAIWork[] => {
+  if (aiType.value === "全部") return aiWorkStore.aiDetails;
+  return aiWorkStore.aiDetails.filter((card) => card.type === aiType.value);
+});
+
 const testimonials: ITestimonial[] = [
   {
     stars: 5,
