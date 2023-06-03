@@ -111,7 +111,11 @@
           </div>
         </div>
       </div>
-      <Cards :cards="aiCards" @type-chosen="(type: string) => aiType = type" />
+      <Cards
+        :cards="sortedAiCards"
+        @type-chosen="(type: string) => aiType = type"
+        @sort-order-chosen="(order: string) => sortOrder = order"
+      />
       <div class="w-full container-wrapper pt-[158px]">
         <div
           class="w-full flex flex-col items-center justify-center border-b border-solid border-white pb-[158px]"
@@ -160,11 +164,29 @@ import { ITestimonial } from "@/interface/ITestimonial";
 const aiWorkStore = useAiWorkStore();
 const windowWidth = ref(window.innerWidth);
 const isMobile = ref(false);
+const sortOrder = ref("descend");
 const aiType = ref("全部");
 const isLoading = computed((): boolean => aiWorkStore.isLoading);
 const aiCards = computed((): IAIWork[] => {
   if (aiType.value === "全部") return aiWorkStore.aiDetails;
   return aiWorkStore.aiDetails.filter((card) => card.type === aiType.value);
+});
+
+const sortedAiCards = computed((): IAIWork[] => {
+  if (aiCards.value.length === 0) return [];
+  return sortOrder.value === "descend"
+    ? [
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        ...aiCards.value.sort(
+          (cardA, cardB) => cardB.create_time - cardA.create_time
+        ),
+      ]
+    : [
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        ...aiCards.value.sort(
+          (cardA, cardB) => cardA.create_time - cardB.create_time
+        ),
+      ];
 });
 
 const testimonials: ITestimonial[] = [

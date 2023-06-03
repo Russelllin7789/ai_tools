@@ -1,5 +1,5 @@
 interface IAIWork {
-  create_time: string;
+  create_time: number;
   description: string;
   discordId: string;
   id: string;

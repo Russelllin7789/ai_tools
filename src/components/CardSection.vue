@@ -55,15 +55,39 @@
           </div>
         </div>
         <div class="absolute right-0 top-0 md:static">
-          <button
-            class="flex items-center px-10 py-5 border border-solid border-[#f2f2f2] rounded-2xl text-base text-black bg-white font-normal"
-          >
-            由新到舊<img
-              src="../assets/Fold.png"
-              alt="fold-icon"
-              class="w-[8px] h-[5px] ml-4"
-            />
-          </button>
+          <div class="relative">
+            <button
+              class="flex items-center px-10 py-5 border border-solid border-[#f2f2f2] rounded-2xl text-base text-black bg-white font-normal"
+              @click="handleSortClicked"
+            >
+              <div v-if="sortOrder === 'descend'">由新到舊</div>
+              <div v-else>由舊到新</div>
+              <img
+                src="../assets/Fold.png"
+                alt="fold-icon"
+                :class="`w-[8px] h-[5px] ml-4 ${
+                  isSortListOpen ? 'rotate-180' : ''
+                }`"
+              />
+            </button>
+            <div
+              v-if="isSortListOpen"
+              class="absolute flex flex-col items-start py-5 bg-white right-0 top-[70px] rounded-2xl sort-box-shadow"
+            >
+              <div
+                class="mb-2 text-black text-base px-10 hover:cursor-pointer hover:bg-gray-300"
+                @click="handleOrderChosen('descend')"
+              >
+                由新到舊
+              </div>
+              <div
+                class="text-black text-base px-10 hover:cursor-pointer hover:bg-gray-300"
+                @click="handleOrderChosen('ascend')"
+              >
+                由舊到新
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div v-if="cards.length >= 1" class="w-full mt-10">
@@ -153,9 +177,12 @@ defineProps<{
 
 const emit = defineEmits<{
   (e: "typeChosen", type: string): void;
+  (e: "sortOrderChosen", order: string): void;
 }>();
 
 const aiWorkStore = useAiWorkStore();
+const sortOrder = ref("descend");
+const isSortListOpen = ref(false);
 const category = ref("全部");
 const aiTypes = ref<string[]>([
   EnumAIType.ALL,
@@ -167,10 +194,21 @@ const aiTypes = ref<string[]>([
   EnumAIType.TRANSLATION_ASSISTANT,
 ]);
 const pageObj = computed((): IPage => aiWorkStore.page);
+// const renderedCards = computed((): IAIWork[] => [...props.cards.sort((cardA, cardB) => cardA.create_time - cardB.create_time)]);
 
 const handleCategoryClicked = (type: string) => {
   emit("typeChosen", type);
   category.value = type;
+};
+
+const handleSortClicked = () => {
+  isSortListOpen.value = !isSortListOpen.value;
+};
+
+const handleOrderChosen = (order: string) => {
+  isSortListOpen.value = false;
+  emit("sortOrderChosen", order);
+  sortOrder.value = order;
 };
 </script>
 
@@ -190,5 +228,9 @@ const handleCategoryClicked = (type: string) => {
 
 .img-container img:hover {
   transform: scale(1.5, 1.5);
+}
+
+.sort-box-shadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 </style>
