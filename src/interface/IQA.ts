@@ -1,7 +1,7 @@
-interface IQAs {
+interface IQA {
   id: string;
   question: string;
   answer: string;
 }
 
-export type { IQAs };
+export type { IQA };

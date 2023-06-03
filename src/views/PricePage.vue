@@ -116,7 +116,7 @@ import QARow from "@/components/QARow.vue";
 import Loading from "@/components/LoadingComponent.vue";
 
 import { useAiWorkStore } from "@/stores/aiWorkStore";
-import { IQAs } from "@/interface/IQAs";
+import { IQA } from "@/interface/IQA";
 import { IAIWork } from "@/interface/IAIWork";
 
 interface IDetails {
@@ -210,7 +210,7 @@ const userRules = ref<IDetails[]>([
   },
 ]);
 
-const qaPairs = ref<IQAs[]>([
+const qaPairs = ref<IQA[]>([
   {
     id: "first",
     question: "如何選擇適合的AI模型？",

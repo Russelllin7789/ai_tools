@@ -24,10 +24,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { IQAs } from "@/interface/IQAs";
+import { IQA } from "@/interface/IQA";
 
 defineProps<{
-  questionAndAnswer: IQAs;
+  questionAndAnswer: IQA;
 }>();
 
 const isFold = ref(true);
