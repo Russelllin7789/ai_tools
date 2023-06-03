@@ -75,13 +75,13 @@
               class="absolute flex flex-col items-start py-5 bg-white right-0 top-[70px] rounded-2xl sort-box-shadow"
             >
               <div
-                class="mb-2 text-black text-base px-10 hover:cursor-pointer hover:bg-gray-300"
+                class="text-black text-base px-10 py-1 hover:cursor-pointer hover:bg-black/20"
                 @click="handleOrderChosen('descend')"
               >
                 由新到舊
               </div>
               <div
-                class="text-black text-base px-10 hover:cursor-pointer hover:bg-gray-300"
+                class="text-black text-base px-10 py-1 hover:cursor-pointer hover:bg-black/20"
                 @click="handleOrderChosen('ascend')"
               >
                 由舊到新
@@ -194,7 +194,6 @@ const aiTypes = ref<string[]>([
   EnumAIType.TRANSLATION_ASSISTANT,
 ]);
 const pageObj = computed((): IPage => aiWorkStore.page);
-// const renderedCards = computed((): IAIWork[] => [...props.cards.sort((cardA, cardB) => cardA.create_time - cardB.create_time)]);
 
 const handleCategoryClicked = (type: string) => {
   emit("typeChosen", type);
