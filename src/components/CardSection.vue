@@ -51,10 +51,18 @@
             <div
               v-for="item in aiTypes"
               :key="item"
-              class="w-full text-black text-base px-10 py-2 hover:cursor-pointer hover:bg-black/20"
+              class="w-full flex items-center justify-between px-10 py-2 hover:cursor-pointer hover:bg-black/20"
               @click="handleCategoryClicked(item)"
             >
-              {{ item }}
+              <div class="text-black text-base">{{ item }}</div>
+
+              <div v-if="item === category">
+                <img
+                  src="../assets/Check.png"
+                  alt="check-icon"
+                  class="w-[10.67px] h-[7.33px]"
+                />
+              </div>
             </div>
           </div>
         </div>
