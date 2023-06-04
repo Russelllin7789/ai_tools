@@ -27,7 +27,7 @@
         <div class="flex justify-end">
           <div
             v-if="isForPrice"
-            class="flex items-center mt-20 mb-[98px] max-w-[636px] font-black text-[48px] leading-[57.6px] text-white"
+            class="flex items-center mt-20 mb-[98px] max-w-[636px] font-black text-[28px] leading-[33.6px] pl-[106px] text-white md:text-[48px] md:leading-[57.6px] md:pl-0"
           >
             我們相信，最靈活的取用機制，才能最大化的幫助你業務的推動。
           </div>

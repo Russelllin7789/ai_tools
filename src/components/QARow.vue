@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`w-[40vw] border border-solid border-[#525252]/80 py-5 px-10 flex items-start justify-start hover:border-white rounded-2xl hover:cursor-pointer ${
+    :class="`w-full md:w-[40vw] border border-solid border-[#525252]/80 py-5 px-10 flex items-start justify-start hover:border-white rounded-2xl hover:cursor-pointer ${
       !isFold ? 'border-white' : ''
     }`"
     @click="isFold = !isFold"

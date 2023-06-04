@@ -12,12 +12,16 @@
           :is-for-price="true"
         />
         <div class="w-full py-[160px]">
-          <div class="section-title text-white mb-20">定價</div>
+          <div
+            class="text-white font-black mb-8 text-[20px] leading-[24px] md:text-[32px] md:leading-[38.4px] md:mb-20"
+          >
+            定價
+          </div>
           <div class="w-full flex items-center justify-between flex-wrap">
             <div
               v-for="(plan, index) in plans"
               :key="index"
-              class="w-[49%] mb-5 border border-solid border-[#525252]/80 rounded-2xl py-5 hover:cursor-pointer hover:border-white"
+              class="w-full mb-5 border border-solid border-[#525252]/80 rounded-2xl py-5 hover:cursor-pointer hover:border-white md:w-[49%]"
             >
               <div
                 class="w-full min-h-[234px] border-b border-solid border-[#525252]/80 px-8"
@@ -40,7 +44,7 @@
               <div class="pt-5 px-8 flex items-center justify-between">
                 <div class="flex items-center justify-content">
                   <div class="font-black text-white text-[20px] leading-[24px]">
-                    NT%5
+                    NT$5
                   </div>
                   <div
                     class="font-normal text-[#919191]/60 text-[20px] leading-[24px]"
@@ -60,9 +64,15 @@
             </div>
           </div>
         </div>
-        <div class="w-full pb-[160px] flex items-start justify-between">
-          <div class="section-title text-white">使用規範</div>
-          <div>
+        <div
+          class="w-full pb-[160px] flex flex-col items-start justify-between md:flex-row"
+        >
+          <div
+            class="text-white mb-12 font-black text-[20px] leading-[24px] md:text-[32px] md:leading-[38.4px] md:mb-0"
+          >
+            使用規範
+          </div>
+          <div class="w-full md:w-[832px]">
             <div
               v-for="(rule, index) in userRules"
               :key="index"
@@ -70,13 +80,15 @@
                 index !== 0 ? 'pt-10' : ''
               }`"
             >
-              <div class="text-white font-black text-[48px] leading-[57.6px]">
+              <div
+                class="text-white font-black text-[32px] leading-[38.4px] md:text-[48px] md:leading-[57.6px]"
+              >
                 {{ rule.name }}
               </div>
               <div
                 v-for="detail in rule.details"
                 :key="detail.id"
-                class="mt-6 mb-10 text-white font-normal text-[32px] leading-[38.4px]"
+                class="mt-6 mb-10 text-white font-normal text-base md:text-[32px] md:leading-[38.4px]"
               >
                 {{ detail.description }}
               </div>
@@ -87,10 +99,14 @@
       <Cards :cards="aiCards" />
       <div class="w-full container-wrapper pt-[160px]">
         <div
-          class="w-full flex items-start justify-between border-b border-solid border-white pb-[160px]"
+          class="w-full flex flex-col items-start justify-between border-b border-solid border-white pb-[160px] md:flex-row"
         >
-          <div class="section-title text-white">常見問題</div>
-          <div>
+          <div
+            class="text-white font-black text-[20px] mb-8 leading-[24px] md:text-[32px] md:leading-[38.4px] md:mb-0"
+          >
+            常見問題
+          </div>
+          <div class="w-full">
             <QARow
               v-for="(qa, index) in qaPairs"
               :key="qa.id"
