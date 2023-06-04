@@ -6,7 +6,7 @@ import eslintPlugin from "vite-plugin-eslint";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), eslintPlugin({ cache: false })],
-  base: "ai_tools/",
+  base: "/ai_tools/",
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
