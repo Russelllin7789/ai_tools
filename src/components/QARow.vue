@@ -5,7 +5,7 @@
     }`"
     @click="isFold = !isFold"
   >
-    <div v-if="isFold" class="w-[14px] h-[14px] pt-1">
+    <div v-if="isFold" class="min-w-[14px] min-h-[14px] w-[14px] h-[14px] pt-1">
       <img src="../assets/Plus.png" alt="plus-icon" />
     </div>
     <div v-else class="min-w-[14px] w-[14px] h-[2px] pt-2.5">

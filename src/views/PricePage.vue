@@ -106,7 +106,7 @@
           >
             常見問題
           </div>
-          <div class="w-full">
+          <div :class="`${isMobile ? 'w-full' : ''}`">
             <QARow
               v-for="(qa, index) in qaPairs"
               :key="qa.id"
