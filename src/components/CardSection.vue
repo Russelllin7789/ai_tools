@@ -29,29 +29,47 @@
       <div
         class="flex w-full items-center justify-between flex-wrap relative md:static"
       >
-        <div>
+        <div class="relative">
           <button
             class="flex items-center px-10 py-5 border border-solid border-[#f2f2f2] rounded-2xl text-base text-black bg-white font-normal"
+            @click="isFilterListOpen = !isFilterListOpen"
           >
-            篩選<img
+            {{ category
+            }}<img
               src="../assets/Filter.png"
               alt="filter-icon"
               class="w-[11px] h-[11px] ml-4"
             />
           </button>
+          <div
+            v-if="isFilterListOpen"
+            class="absolute flex flex-col items-start py-5 bg-white left-0 top-[70px] rounded-2xl sort-box-shadow min-w-[240px]"
+          >
+            <div class="text-black/60 text-[12px] leading-[18px] px-10">
+              模型
+            </div>
+            <div
+              v-for="item in aiTypes"
+              :key="item"
+              class="w-full text-black text-base px-10 py-2 hover:cursor-pointer hover:bg-black/20"
+              @click="handleCategoryClicked(item)"
+            >
+              {{ item }}
+            </div>
+          </div>
         </div>
         <div class="flex items-center justify-center flex-wrap mt-4 md:mt-0">
           <div
-            v-for="type in aiTypes"
+            v-for="item in aiTypes"
             :class="`rounded-2xl px-4 py-2 font-bold text-base leading-[150%] mr-2 cursor-pointer ${
-              category === type
+              category === item
                 ? 'bg-[#f2f2f2] text-[#020202]'
                 : 'text-[#919191]'
             }`"
-            :key="type"
-            @click="handleCategoryClicked(type)"
+            :key="item"
+            @click="handleCategoryClicked(item)"
           >
-            {{ type }}
+            {{ item }}
           </div>
         </div>
         <div class="absolute right-0 top-0 md:static">
@@ -183,6 +201,7 @@ const emit = defineEmits<{
 const aiWorkStore = useAiWorkStore();
 const sortOrder = ref("descend");
 const isSortListOpen = ref(false);
+const isFilterListOpen = ref(false);
 const category = ref("全部");
 const aiTypes = ref<string[]>([
   EnumAIType.ALL,
@@ -196,6 +215,7 @@ const aiTypes = ref<string[]>([
 const pageObj = computed((): IPage => aiWorkStore.page);
 
 const handleCategoryClicked = (type: string) => {
+  isFilterListOpen.value = false;
   emit("typeChosen", type);
   category.value = type;
 };
